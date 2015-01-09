@@ -1,0 +1,954 @@
+<?xml version='1.0' encoding='UTF-8'?><codeBook xmlns="http://www.icpsr.umich.edu/DDI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.icpsr.umich.edu/DDI http://www.icpsr.umich.edu/DDI/Version2-0.xsd" version="2.0" source="DVN_3_0">
+    <docDscr>
+        <citation>
+            <titlStmt>
+                <titl>Replication data for: The Future of Death in America</titl>
+                <IDNo agency="handle">hdl:1902.1/16178</IDNo>
+            </titlStmt>
+            <distStmt>
+                <distrbtr>Harvard Dataverse Network</distrbtr>
+                <distDate date="2014-08-21">2014-08-21</distDate>
+            </distStmt>
+            <verStmt source="DVN">
+                <version date="2014-08-21" type="RELEASED">12</version>
+                <verResp>Dwayne</verResp>
+            </verStmt>
+            <verStmt source="DVN">
+                <version date="2014-05-27" type="ARCHIVED">11</version>
+                <verResp>garyking, sonia</verResp>
+                <notes type="DVN:VERSION_NOTE" subject="Version Note">updated citation information, links
+                    Sonia Barbosa</notes>
+                <notes type="DVN:ARCHIVE_NOTE" subject="Archive Note">Replaced by version 12</notes>
+                <notes type="DVN:ARCHIVE_DATE" subject="Archive Date">2014-08-21</notes>
+            </verStmt>
+            <verStmt source="DVN">
+                <version date="2013-10-01" type="ARCHIVED">10</version>
+                <verResp>sonia</verResp>
+                <notes type="DVN:ARCHIVE_NOTE" subject="Archive Note">Replaced by version 11</notes>
+                <notes type="DVN:ARCHIVE_DATE" subject="Archive Date">2014-05-27</notes>
+            </verStmt>
+            <verStmt source="DVN">
+                <version date="2013-09-30" type="ARCHIVED">9</version>
+                <verResp>sonia</verResp>
+                <notes type="DVN:ARCHIVE_NOTE" subject="Archive Note">Replaced by version 10</notes>
+                <notes type="DVN:ARCHIVE_DATE" subject="Archive Date">2013-10-01</notes>
+            </verStmt>
+            <verStmt source="DVN">
+                <version date="2011-08-23" type="ARCHIVED">8</version>
+                <verResp>sonia</verResp>
+                <notes type="DVN:VERSION_NOTE" subject="Version Note">changed display of original article link per Gary's request</notes>
+                <notes type="DVN:ARCHIVE_NOTE" subject="Archive Note">Replaced by version 9</notes>
+                <notes type="DVN:ARCHIVE_DATE" subject="Archive Date">2013-09-30</notes>
+            </verStmt>
+            <verStmt source="DVN">
+                <version date="2011-06-15" type="ARCHIVED">7</version>
+                <verResp>sonia</verResp>
+                <notes type="DVN:ARCHIVE_NOTE" subject="Archive Note">Replaced by version 8</notes>
+                <notes type="DVN:ARCHIVE_DATE" subject="Archive Date">2011-08-23</notes>
+            </verStmt>
+            <verStmt source="DVN">
+                <version date="2011-06-14" type="ARCHIVED">6</version>
+                <verResp>sonia</verResp>
+                <notes type="DVN:ARCHIVE_NOTE" subject="Archive Note">Replaced by version 7</notes>
+                <notes type="DVN:ARCHIVE_DATE" subject="Archive Date">2011-06-15</notes>
+            </verStmt>
+            <verStmt source="DVN">
+                <version date="2011-06-14" type="ARCHIVED">5</version>
+                <verResp>sonia</verResp>
+                <notes type="DVN:ARCHIVE_NOTE" subject="Archive Note">Replaced by version 6</notes>
+                <notes type="DVN:ARCHIVE_DATE" subject="Archive Date">2011-06-14</notes>
+            </verStmt>
+            <verStmt source="DVN">
+                <version date="2011-06-14" type="ARCHIVED">4</version>
+                <verResp>sonia</verResp>
+                <notes type="DVN:ARCHIVE_NOTE" subject="Archive Note">Replaced by version 5</notes>
+                <notes type="DVN:ARCHIVE_DATE" subject="Archive Date">2011-06-14</notes>
+            </verStmt>
+            <verStmt source="DVN">
+                <version date="2011-06-14" type="ARCHIVED">3</version>
+                <verResp>sonia</verResp>
+                <notes type="DVN:ARCHIVE_NOTE" subject="Archive Note">Replaced by version 4</notes>
+                <notes type="DVN:ARCHIVE_DATE" subject="Archive Date">2011-06-14</notes>
+            </verStmt>
+            <verStmt source="DVN">
+                <version date="2011-06-14" type="ARCHIVED">2</version>
+                <verResp>sonia</verResp>
+                <notes type="DVN:ARCHIVE_NOTE" subject="Archive Note">Replaced by version 3</notes>
+                <notes type="DVN:ARCHIVE_DATE" subject="Archive Date">2011-06-14</notes>
+            </verStmt>
+            <verStmt source="DVN">
+                <version date="2011-06-13" type="ARCHIVED">1</version>
+                <verResp>sonia</verResp>
+                <notes type="DVN:ARCHIVE_NOTE" subject="Archive Note">Replaced by version 2</notes>
+                <notes type="DVN:ARCHIVE_DATE" subject="Archive Date">2011-06-14</notes>
+            </verStmt>
+            <biblCit format="DVN">King, Gary; Soneji, Samir, 2011, "Replication data for: The Future of Death in America", http://hdl.handle.net/1902.1/16178 UNF:5:bkO65MmINN1lsM7QjNZlcw== IQSS Dataverse Network [Distributor] V12 [Version]</biblCit>
+            <holdings URI="http://thedata.harvard.edu/dvn/study?globalId=hdl:1902.1/16178"/>
+        </citation>
+    </docDscr>
+    <stdyDscr>
+        <citation>
+            <titlStmt>
+                <titl>Replication data for: The Future of Death in America</titl>
+                <IDNo agency="handle">hdl:1902.1/16178</IDNo>
+            </titlStmt>
+            <rspStmt>
+                <AuthEnty affiliation="Harvard University">King, Gary</AuthEnty>
+                <AuthEnty affiliation="Dartmouth Medical School">Soneji, Samir</AuthEnty>
+            </rspStmt>
+            <prodStmt>
+                <prodDate date="2011">2011</prodDate>
+            </prodStmt>
+            <distStmt>
+                <distrbtr>IQSS Dataverse Network<ExtLink URI="http://dvn.iq.harvard.edu"/>
+                    <ExtLink URI="http://dvn.iq.harvard.edu/images/iqss-logo-background.png" role="image"/>
+                </distrbtr>
+                <contact email="king@harvard.edu"></contact>
+                <depDate date="2011-06-13">2011-06-13</depDate>
+            </distStmt>
+            <verStmt source="DVN">
+                <version date="2014-08-21" type="RELEASED">12</version>
+            </verStmt>
+            <notes level="study" type="VDC:UNF" subject="Universal Numeric Fingerprint">UNF:5:bkO65MmINN1lsM7QjNZlcw==</notes>
+        </citation>
+        <stdyInfo>
+            <abstract date="2011-03-16">Population mortality forecasts are widely used for allocating public health expenditures, setting research priorities, and evaluating the viability of public pensions, private pensions, and health care financing systems. In part because existing methods seem to forecast worse when based on more information, most forecasts are still based on simple linear extrapolations that ignore known biological risk factors and other prior information. We adapt a Bayesian hierarchical forecasting model capable of including more known health and demographic information than has previously been possible. This leads to the first age- and sex-specific forecasts of American mortality that simultaneously incorporate, in a formal statistical model, the effects of the recent rapid increase in obesity, the steady decline in tobacco consumption, and the well known patterns of smooth mortality age profiles and time trends. Formally including new information in forecasts can matter a great deal. For example, we estimate an increase in male life expectancy at birth from 76.2 years in 2010 to 79.9 years in 2030, which is 1.8 years greater than the U.S. Social Security Administration projection and 1.5 years more than U.S. Census projection. For females, we estimate more modest gains in life expectancy at birth over the next twenty years from 80.5 years to 81.9 years, which is virtually identical to the Social Security Administration projection and 2.0 years less than U.S. Census projections. We show that these patterns are also likely to greatly affect the aging American population structure. We offer an easy-to-use approach so that researchers can include other sources of information and potentially improve on our forecasts too.&lt;br />&lt;br />
+
+&lt;a href="http://www.demographic-research.org/volumes/vol25/1/" target="_blank">Website&lt;/a> 
+
+&lt;br />&lt;br />
+
+                See also:  &lt;a href="http://gking.harvard.edu/category/research-interests/applications/mortality-studies" target="_blank">Mortality Studies&lt;/a> 
+
+
+            </abstract>
+        </stdyInfo>
+        <dataAccs>
+            <notes level="dvn" type="DVN:TOU" subject="Terms Of Use">&lt;b>IQSS Dataverse Network Terms and Conditions&lt;/b>
+
+&lt;p>By downloading these Materials, I agree to the following:&lt;/p>
+
+&lt;ol>
+&lt;li>I will not use the Materials to
+&lt;ol type="a">
+&lt;li>obtain information that could directly or indirectly identify subjects.&lt;/li>
+&lt;li>produce links among the Distributor's datasets or among the Distributor's data and other datasets that could identify individuals or organizations.&lt;/li>
+&lt;li>obtain information about, or further contact with, subjects known to me except where the use and/or release of such identifying information has no potential for constituting an unwarranted invasion of privacy and/or breach of confidentiality.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>I agree not to download any Materials where prohibited by applicable law.&lt;/li>
+&lt;li>I agree not to use the Materials in any way prohibited by applicable law.&lt;/li>
+&lt;li>I agree that any books, articles, conference papers, theses, dissertations, reports, or other publications that I create which employ data reference the bibliographic citation accompanying this data. These citations include the data authors, data identifier, and other information accord with the Recommended Standard (&lt;strong>http://thedata.org/citation/standard&lt;/strong>) for social science data.&lt;/li>
+&lt;li>THE DISTRIBUTOR MAKES NO WARRANTIES, EXPRESS OR IMPLIED, BY OPERATION OF LAW OR OTHERWISE, REGARDING OR RELATING TO THE DATASET&lt;/li>
+&lt;/ol>
+            </notes>
+        </dataAccs>
+        <othrStdyMat>
+            <relMat source="DVN_3_0" type="replicationFor">King, Gary, and Samir Soneji. 2011. "The Future of Death in America." Demographic Research, Vol. 25, No 1.: 1-38.&lt;a href="http://j.mp/l8hnHs" target="_blank"> Link to article&lt;/a> </relMat>
+            <relPubl>&lt;!--DVN:REPLICATION_FOR:DVN_3_0--><citation source="DVN_3_0">
+                    <biblCit>King, Gary, and Samir Soneji. 2011. "The Future of Death in America." Demographic Research, Vol. 25, No 1.: 1-38.&lt;a href="http://j.mp/l8hnHs" target="_blank"> Link to article&lt;/a> </biblCit>
+                    <notes type="DVN:REPLICATION_FOR"/>
+                </citation>
+            </relPubl>
+            <relPubl>&lt;a href="http://gking.harvard.edu/gking/http%3A/%252Fgking.harvard.edu/files/abs/ssc-abs.shtml">Soneji, Samir, and Gary King. 2011. "Statistical Security for Social Security."
+                Demography, Vol. 49, No. 3: 1037-1060 &lt;/a> 
+                <citation source="DVN_3_0">
+                    <biblCit>&lt;a href="http://gking.harvard.edu/gking/http%3A/%252Fgking.harvard.edu/files/abs/ssc-abs.shtml">Soneji, Samir, and Gary King. 2011. "Statistical Security for Social Security."
+                        Demography, Vol. 49, No. 3: 1037-1060 &lt;/a> 
+                    </biblCit>
+                </citation>
+            </relPubl>
+        </othrStdyMat>
+    </stdyDscr>
+    <fileDscr ID="f2346236" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/hmd.qx.tab?fileId=2346236">
+        <fileTxt>
+            <fileName>hmd.qx.tab</fileName>
+            <fileCont></fileCont>
+            <dimensns>
+                <caseQnty>101</caseQnty>
+                <varQnty>150</varQnty>
+            </dimensns>
+            <fileType>text/tab-separated-values</fileType>
+        </fileTxt>
+        <notes level="file" type="VDC:UNF" subject="Universal Numeric Fingerprint">UNF:5:UQ+m0UC89w9Rb2US3s+5Qw==</notes>
+        <notes type="vdc:category">2. Data</notes>
+    </fileDscr>
+    <fileDscr ID="f2346234" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/smoking.smooth.tab?fileId=2346234">
+        <fileTxt>
+            <fileName>smoking.smooth.tab</fileName>
+            <fileCont></fileCont>
+            <dimensns>
+                <caseQnty>101</caseQnty>
+                <varQnty>106</varQnty>
+            </dimensns>
+            <fileType>text/tab-separated-values</fileType>
+        </fileTxt>
+        <notes level="file" type="VDC:UNF" subject="Universal Numeric Fingerprint">UNF:5:xTyO4B6mKDvFZs3EQ0irug==</notes>
+        <notes type="vdc:category">2. Data</notes>
+    </fileDscr>
+    <fileDscr ID="f2346235" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/bmi.smooth.tab?fileId=2346235">
+        <fileTxt>
+            <fileName>bmi.smooth.tab</fileName>
+            <fileCont></fileCont>
+            <dimensns>
+                <caseQnty>100</caseQnty>
+                <varQnty>94</varQnty>
+            </dimensns>
+            <fileType>text/tab-separated-values</fileType>
+        </fileTxt>
+        <notes level="file" type="VDC:UNF" subject="Universal Numeric Fingerprint">UNF:5:xV9hRaQykyqAwxxk9sX8nQ==</notes>
+        <notes type="vdc:category">2. Data</notes>
+    </fileDscr>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/readme.txt?fileId=2198791">
+        <labl>readme.txt</labl>
+        <txt>Document detailing file information and how to replicate this study</txt>
+        <notes type="vdc:category">1. Documentation</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/mort.pdf?fileId=2198933">
+        <labl>mort.pdf</labl>
+        <txt>Original Publication based on this Replication</txt>
+        <notes type="vdc:category">1. Documentation</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/ssa.mx.rates.2009.txt?fileId=2198886">
+        <labl>ssa.mx.rates.2009.txt</labl>
+        <txt>SSA mortality rates </txt>
+        <notes type="vdc:category">2. Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/ssa.2009.trustees.le.txt?fileId=2198876">
+        <labl>ssa.2009.trustees.le.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">2. Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/smoking.smooth.Rdata?fileId=2198855">
+        <labl>smoking.smooth.Rdata</labl>
+        <txt></txt>
+        <notes type="vdc:category">2. Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/bmi.smooth.Rdata?fileId=2198890">
+        <labl>bmi.smooth.Rdata</labl>
+        <txt></txt>
+        <notes type="vdc:category">2. Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/hmd.qx.Rdata?fileId=2198905">
+        <labl>hmd.qx.Rdata</labl>
+        <txt>conditional probabilities of death</txt>
+        <notes type="vdc:category">2. Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/hmd.lt.con_1.txt?fileId=2346223">
+        <labl>hmd.lt.con_1.txt</labl>
+        <txt>1x5 US life table for males and females</txt>
+        <notes type="vdc:category">2. Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/hmd.lt.txt?fileId=2198851">
+        <labl>hmd.lt.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">2. Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/US_male_data.zip?fileId=2198920">
+        <labl>US_male_data.zip</labl>
+        <txt>file for each age named 'csid2450XXX.txt', where 2450 is the country code for the US and XXX represents the three-digit age</txt>
+        <notes type="vdc:category">3a. US-Male Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450086.txt?fileId=2198898">
+        <labl>csid2450086.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450045.txt?fileId=2198864">
+        <labl>csid2450045.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450069.txt?fileId=2198840">
+        <labl>csid2450069.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450035.txt?fileId=2198848">
+        <labl>csid2450035.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450085.txt?fileId=2198875">
+        <labl>csid2450085.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450052.txt?fileId=2198818">
+        <labl>csid2450052.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450090.txt?fileId=2198918">
+        <labl>csid2450090.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450059.txt?fileId=2198882">
+        <labl>csid2450059.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450095.txt?fileId=2198845">
+        <labl>csid2450095.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450078.txt?fileId=2198781">
+        <labl>csid2450078.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450038.txt?fileId=2198810">
+        <labl>csid2450038.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450041.txt?fileId=2198809">
+        <labl>csid2450041.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450020.txt?fileId=2198853">
+        <labl>csid2450020.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450011.txt?fileId=2198862">
+        <labl>csid2450011.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450023.txt?fileId=2198884">
+        <labl>csid2450023.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450065.txt?fileId=2198859">
+        <labl>csid2450065.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450012.txt?fileId=2198838">
+        <labl>csid2450012.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450062.txt?fileId=2198868">
+        <labl>csid2450062.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450084.txt?fileId=2198832">
+        <labl>csid2450084.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450072.txt?fileId=2198826">
+        <labl>csid2450072.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450010.txt?fileId=2198915">
+        <labl>csid2450010.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450097.txt?fileId=2198869">
+        <labl>csid2450097.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450075.txt?fileId=2198789">
+        <labl>csid2450075.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450068.txt?fileId=2198860">
+        <labl>csid2450068.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450043.txt?fileId=2198829">
+        <labl>csid2450043.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450060.txt?fileId=2198861">
+        <labl>csid2450060.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450071.txt?fileId=2198866">
+        <labl>csid2450071.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450003.txt?fileId=2198816">
+        <labl>csid2450003.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450049.txt?fileId=2198914">
+        <labl>csid2450049.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450077.txt?fileId=2198894">
+        <labl>csid2450077.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450029.txt?fileId=2198819">
+        <labl>csid2450029.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450002.txt?fileId=2198877">
+        <labl>csid2450002.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450048.txt?fileId=2198858">
+        <labl>csid2450048.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450037.txt?fileId=2198872">
+        <labl>csid2450037.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450018.txt?fileId=2198824">
+        <labl>csid2450018.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450080.txt?fileId=2198873">
+        <labl>csid2450080.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450001.txt?fileId=2198911">
+        <labl>csid2450001.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450047.txt?fileId=2198820">
+        <labl>csid2450047.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450034.txt?fileId=2198865">
+        <labl>csid2450034.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450054.txt?fileId=2198857">
+        <labl>csid2450054.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450040.txt?fileId=2198888">
+        <labl>csid2450040.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450027.txt?fileId=2198805">
+        <labl>csid2450027.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450044.txt?fileId=2198793">
+        <labl>csid2450044.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450093.txt?fileId=2198795">
+        <labl>csid2450093.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450066.txt?fileId=2198794">
+        <labl>csid2450066.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450017.txt?fileId=2198843">
+        <labl>csid2450017.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450042.txt?fileId=2198910">
+        <labl>csid2450042.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450008.txt?fileId=2198788">
+        <labl>csid2450008.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450098.txt?fileId=2198852">
+        <labl>csid2450098.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450013.txt?fileId=2198834">
+        <labl>csid2450013.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450055.txt?fileId=2198902">
+        <labl>csid2450055.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450092.txt?fileId=2198901">
+        <labl>csid2450092.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450033.txt?fileId=2198897">
+        <labl>csid2450033.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450089.txt?fileId=2198792">
+        <labl>csid2450089.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450022.txt?fileId=2198798">
+        <labl>csid2450022.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450073.txt?fileId=2198787">
+        <labl>csid2450073.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450067.txt?fileId=2198783">
+        <labl>csid2450067.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450100.txt?fileId=2198863">
+        <labl>csid2450100.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450021.txt?fileId=2198893">
+        <labl>csid2450021.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450032.txt?fileId=2198904">
+        <labl>csid2450032.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450051.txt?fileId=2198784">
+        <labl>csid2450051.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450083.txt?fileId=2198887">
+        <labl>csid2450083.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450064.txt?fileId=2198830">
+        <labl>csid2450064.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450004.txt?fileId=2198790">
+        <labl>csid2450004.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450070.txt?fileId=2198867">
+        <labl>csid2450070.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450016.txt?fileId=2198815">
+        <labl>csid2450016.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450096.txt?fileId=2198844">
+        <labl>csid2450096.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450006.txt?fileId=2198913">
+        <labl>csid2450006.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450050.txt?fileId=2198780">
+        <labl>csid2450050.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450026.txt?fileId=2198895">
+        <labl>csid2450026.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450082.txt?fileId=2198806">
+        <labl>csid2450082.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450015.txt?fileId=2198808">
+        <labl>csid2450015.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450088.txt?fileId=2198881">
+        <labl>csid2450088.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450094.txt?fileId=2198802">
+        <labl>csid2450094.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450024.txt?fileId=2198916">
+        <labl>csid2450024.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450005.txt?fileId=2198835">
+        <labl>csid2450005.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450081.txt?fileId=2198828">
+        <labl>csid2450081.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450030.txt?fileId=2198825">
+        <labl>csid2450030.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450031.txt?fileId=2198785">
+        <labl>csid2450031.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450007.txt?fileId=2198839">
+        <labl>csid2450007.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450074.txt?fileId=2198821">
+        <labl>csid2450074.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450058.txt?fileId=2198871">
+        <labl>csid2450058.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450079.txt?fileId=2198856">
+        <labl>csid2450079.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450057.txt?fileId=2198849">
+        <labl>csid2450057.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450087.txt?fileId=2198879">
+        <labl>csid2450087.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450028.txt?fileId=2198827">
+        <labl>csid2450028.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450099.txt?fileId=2198906">
+        <labl>csid2450099.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450036.txt?fileId=2198831">
+        <labl>csid2450036.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450053.txt?fileId=2198854">
+        <labl>csid2450053.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450046.txt?fileId=2198889">
+        <labl>csid2450046.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450063.txt?fileId=2198847">
+        <labl>csid2450063.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450009.txt?fileId=2198896">
+        <labl>csid2450009.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450025.txt?fileId=2198899">
+        <labl>csid2450025.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450019.txt?fileId=2198782">
+        <labl>csid2450019.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450061.txt?fileId=2198909">
+        <labl>csid2450061.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450014.txt?fileId=2198812">
+        <labl>csid2450014.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450000.txt?fileId=2198814">
+        <labl>csid2450000.txt</labl>
+        <txt>file for each age named 'csid2450XXX.txt', where 2450 is the country code for the US and XXX represents the three-digit age</txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450039.txt?fileId=2198883">
+        <labl>csid2450039.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450091.txt?fileId=2198919">
+        <labl>csid2450091.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450056.txt?fileId=2198874">
+        <labl>csid2450056.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/csid2450076.txt?fileId=2198811">
+        <labl>csid2450076.txt</labl>
+        <txt></txt>
+        <notes type="vdc:category">3. US-Female Data</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/covert.ssa.mx.to.qx.R?fileId=2198823">
+        <labl>covert.ssa.mx.to.qx.R</labl>
+        <txt>converts the SSA mortality rates (m_x) into conditional probabilities of death (q_x), using a_x values from the Human Mortality Database.</txt>
+        <notes type="vdc:category">4. RCode Files</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/graph.age.time.domain.R?fileId=2198912">
+        <labl>graph.age.time.domain.R</labl>
+        <txt>plots the forecast in the age and time domain 
+            and also includes the SSA intermediate cost projection</txt>
+        <notes type="vdc:category">4. RCode Files</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/forecast.weights.R?fileId=2198841">
+        <labl>forecast.weights.R</labl>
+        <txt>loads the forecasts and allows the user to input a selection of weights for smoothing over age, time,
+            trend, and model fit</txt>
+        <notes type="vdc:category">4. RCode Files</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/graph.life.expectancy.oadr.R?fileId=2198800">
+        <labl>graph.life.expectancy.oadr.R</labl>
+        <txt>plots the forecasted life expctancy and OADR, comparing both to SSA projections</txt>
+        <notes type="vdc:category">4. RCode Files</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/calculate.ssa.life.expectancy.R?fileId=2198880">
+        <labl>calculate.ssa.life.expectancy.R</labl>
+        <txt>Social Security Administration (SSA) life expectancy
+            The script loads the SSA mortality rates and calculates the 
+            corresponding life expectancy estimates</txt>
+        <notes type="vdc:category">4. RCode Files</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/USfemalesmokingbmi25_appendix_example.R?fileId=2198836">
+        <labl>USfemalesmokingbmi25_appendix_example.R</labl>
+        <txt>recreate the example presented in the Appendix</txt>
+        <notes type="vdc:category">4. RCode Files</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/graph.objective.function.R?fileId=2198885">
+        <labl>graph.objective.function.R</labl>
+        <txt>recreate the example presented in the Appendix</txt>
+        <notes type="vdc:category">4. RCode Files</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/condense.qx.fxn.R?fileId=2198846">
+        <labl>condense.qx.fxn.R</labl>
+        <txt></txt>
+        <notes type="vdc:category">4. RCode Files</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/prepare-us-files.R?fileId=2198833">
+        <labl>prepare-us-files.R</labl>
+        <txt>loads historical mortality from the Human Mortality Database, historical smoking, and historical obesity. The script will create two subdirectories in the working directory named 'US-male' and 'US-female'</txt>
+        <notes type="vdc:category">4. RCode Files</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/FileCreate.R?fileId=2198908">
+        <labl>FileCreate.R</labl>
+        <txt>creates forecasts scripts saved in the
+            /scripts subdirectory.  The files are named according to the sex, covariates, and lag of the forecast</txt>
+        <notes type="vdc:category">4. RCode Files</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/graph.uncertainty.R?fileId=2198837">
+        <labl>graph.uncertainty.R</labl>
+        <txt></txt>
+        <notes type="vdc:category">4. RCode Files</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/graph.old.R?fileId=2198907">
+        <labl>graph.old.R</labl>
+        <txt>calcuates and plots the OLS forecasts that
+            include as covariates time only, time and lagged smoking, and time, lagged smoking, and lagged obesity</txt>
+        <notes type="vdc:category">4. RCode Files</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/USfemalesmokingbmi20.R?fileId=2198799">
+        <labl>USfemalesmokingbmi20.R</labl>
+        <txt>Prepare forecasts The script 'FileCreate.R" creates forecasts scripts saved in the /scripts subdirectory.  
+            The files are named according to the sex,
+            covariates, and lag of the forecast.  For example,
+            'USmalesmokingbmi25.R' processes the US forecast for males/females with the covariates smoking and obesity with the lag set at # years.</txt>
+        <notes type="vdc:category">5. Scripts</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/USfemalesmokingbmi25.R?fileId=2198817">
+        <labl>USfemalesmokingbmi25.R</labl>
+        <txt>Prepare forecasts The script 'FileCreate.R" creates forecasts scripts saved in the /scripts subdirectory.  
+            The files are named according to the sex,
+            covariates, and lag of the forecast.  For example,
+            'USmalesmokingbmi25.R' processes the US forecast for males/females with the covariates smoking and obesity with the lag set at # years.</txt>
+        <notes type="vdc:category">5. Scripts</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/USmalesmokingbmi15.R?fileId=2198807">
+        <labl>USmalesmokingbmi15.R</labl>
+        <txt>Prepare forecasts The script 'FileCreate.R" creates forecasts scripts saved in the /scripts subdirectory.  
+            The files are named according to the sex,
+            covariates, and lag of the forecast.  For example,
+            'USmalesmokingbmi25.R' processes the US forecast for males/females with the covariates smoking and obesity with the lag set at # years.</txt>
+        <notes type="vdc:category">5. Scripts</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/USmalesmokingbmi25.R?fileId=2198803">
+        <labl>USmalesmokingbmi25.R</labl>
+        <txt>Prepare forecasts The script 'FileCreate.R" creates forecasts scripts saved in the /scripts subdirectory.  The files are named according to the sex,
+            covariates, and lag of the forecast.  For example,
+            'USmalesmokingbmi#.R' processes the US forecast for males with the covariates smoking and obesity with the lag set at 25 years processes the US forecast for males/females with the
+            covariates smoking and obesity with 
+            the lag set at # years</txt>
+        <notes type="vdc:category">5. Scripts</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/USmalesmoking20.R?fileId=2198850">
+        <labl>USmalesmoking20.R</labl>
+        <txt></txt>
+        <notes type="vdc:category">5. Scripts</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/USmalesmoking15.R?fileId=2198786">
+        <labl>USmalesmoking15.R</labl>
+        <txt></txt>
+        <notes type="vdc:category">5. Scripts</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/USfemalesmokingbmi10.R?fileId=2198813">
+        <labl>USfemalesmokingbmi10.R</labl>
+        <txt>Prepare forecasts The script 'FileCreate.R" creates forecasts scripts saved in the /scripts subdirectory.  
+            The files are named according to the sex,
+            covariates, and lag of the forecast.  For example,
+            'USmalesmokingbmi25.R' processes the US forecast for males/females with the covariates smoking and obesity with the lag set at # years.</txt>
+        <notes type="vdc:category">5. Scripts</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/USfemalesmoking5.R?fileId=2198804">
+        <labl>USfemalesmoking5.R</labl>
+        <txt></txt>
+        <notes type="vdc:category">5. Scripts</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/USmalesmoking25.R?fileId=2198796">
+        <labl>USmalesmoking25.R</labl>
+        <txt></txt>
+        <notes type="vdc:category">5. Scripts</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/USmalesmoking10.R?fileId=2198842">
+        <labl>USmalesmoking10.R</labl>
+        <txt></txt>
+        <notes type="vdc:category">5. Scripts</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/USfemalesmokingbmi15.R?fileId=2198892">
+        <labl>USfemalesmokingbmi15.R</labl>
+        <txt>Prepare forecasts The script 'FileCreate.R" creates forecasts scripts saved in the /scripts subdirectory.  
+            The files are named according to the sex,
+            covariates, and lag of the forecast.  For example,
+            'USmalesmokingbmi25.R' processes the US forecast for males/females with the covariates smoking and obesity with the lag set at # years.</txt>
+        <notes type="vdc:category">5. Scripts</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/USmalesmokingbmi20.R?fileId=2198870">
+        <labl>USmalesmokingbmi20.R</labl>
+        <txt>Prepare forecasts The script 'FileCreate.R" creates forecasts scripts saved in the /scripts subdirectory.  
+            The files are named according to the sex,
+            covariates, and lag of the forecast.  For example,
+            'USmalesmokingbmi25.R' processes the US forecast for males/females with the covariates smoking and obesity with the lag set at # years.</txt>
+        <notes type="vdc:category">5. Scripts</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/USfemalesmoking10.R?fileId=2198822">
+        <labl>USfemalesmoking10.R</labl>
+        <txt></txt>
+        <notes type="vdc:category">5. Scripts</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/USfemalesmokingbmi5.R?fileId=2198900">
+        <labl>USfemalesmokingbmi5.R</labl>
+        <txt>Prepare forecasts The script 'FileCreate.R" creates forecasts scripts saved in the /scripts subdirectory.  
+            The files are named according to the sex,
+            covariates, and lag of the forecast.  For example,
+            'USmalesmokingbmi25.R' processes the US forecast for males/females with the covariates smoking and obesity with the lag set at # years.</txt>
+        <notes type="vdc:category">5. Scripts</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/USfemalesmoking20.R?fileId=2198797">
+        <labl>USfemalesmoking20.R</labl>
+        <txt></txt>
+        <notes type="vdc:category">5. Scripts</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/USfemalesmoking25.R?fileId=2198891">
+        <labl>USfemalesmoking25.R</labl>
+        <txt></txt>
+        <notes type="vdc:category">5. Scripts</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/USmalesmoking5.R?fileId=2198801">
+        <labl>USmalesmoking5.R</labl>
+        <txt></txt>
+        <notes type="vdc:category">5. Scripts</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/USmalesmokingbmi10.R?fileId=2198903">
+        <labl>USmalesmokingbmi10.R</labl>
+        <txt>Prepare forecasts The script 'FileCreate.R" creates forecasts scripts saved in the /scripts subdirectory.  
+            The files are named according to the sex,
+            covariates, and lag of the forecast.  For example,
+            'USmalesmokingbmi25.R' processes the US forecast for males/females with the covariates smoking and obesity with the lag set at # years.</txt>
+        <notes type="vdc:category">5. Scripts</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/USmalesmokingbmi5.R?fileId=2198917">
+        <labl>USmalesmokingbmi5.R</labl>
+        <txt>Prepare forecasts The script 'FileCreate.R" creates forecasts scripts saved in the /scripts subdirectory.  
+            The files are named according to the sex,
+            covariates, and lag of the forecast.  For example,
+            'USmalesmokingbmi25.R' processes the US forecast for males/females with the covariates smoking and obesity with the lag set at # years.</txt>
+        <notes type="vdc:category">5. Scripts</notes>
+    </otherMat>
+    <otherMat level="study" URI="http://thedata.harvard.edu/dvn/dv/king/FileDownload/USfemalesmoking15.R?fileId=2198878">
+        <labl>USfemalesmoking15.R</labl>
+        <txt></txt>
+        <notes type="vdc:category">5. Scripts</notes>
+    </otherMat>
+</codeBook>

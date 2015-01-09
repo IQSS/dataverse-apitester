@@ -7,26 +7,43 @@ package org.dataverse.apitester;
 
 import com.jayway.restassured.RestAssured;
 import static com.jayway.restassured.RestAssured.expect;
-import static com.jayway.restassured.RestAssured.get;
+import static com.jayway.restassured.RestAssured.given;
+import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.path.json.JsonPath;
 import com.jayway.restassured.response.Response;
-import static org.hamcrest.CoreMatchers.equalTo;
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
 import org.junit.After;
 import org.junit.AfterClass;
-import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-public class MainTest {
-
-    public MainTest() {
+public class ImportTest {
+    private static String apiToken;
+    private static Long testUserId; 
+    public ImportTest() {
         RestAssured.baseURI = "http://localhost:8080";
     }
 
     @BeforeClass
-    public static void setUpClass() {
-    }
+    public static void setUpClass() throws IOException{
+       // Create a new user and get the API Key.   
+       File userJson = new File("src/test/java/org/dataverse/apitester/data/test-user.json"); 
+       String jsonStr = new Scanner(userJson).useDelimiter("\\Z").next();
+       Response response = given().body(jsonStr).contentType(ContentType.JSON).when().post("/api/users/tom/burrito");
+       String json = response.asString();
+     
+       System.out.println("json: "+json);
+       JsonPath jsonPath = new JsonPath(json);
+       apiToken = jsonPath.get("apiToken");
+       testUserId = jsonPath.get("data.user.id");
+      
+        // use API key to create a dataverse to import the datasets into
+    
+         
+  }
 
     @AfterClass
     public static void tearDownClass() {
@@ -34,6 +51,7 @@ public class MainTest {
 
     @Before
     public void setUp() {
+        
     }
 
     @After
@@ -48,27 +66,5 @@ public class MainTest {
         expect().statusCode(404).when().get("/doesnotexist");
     }
 
-    @Test
-    public void testSearchWithNoQueryParameter() {
-        Response response = get("/api/search");
-        assertEquals(400, response.getStatusCode());
-        String json = response.asString();
-        JsonPath jsonPath = new JsonPath(json);
-        assertEquals(jsonPath.get("status"), "ERROR");
-        assertEquals(jsonPath.get("message"), "q parameter is missing");
-    }
-
-    @Test
-    public void testSwordServiceDocument() {
-        expect().statusCode(200)
-                .body(
-                        "service.version", equalTo("2.0")
-                )
-                /**
-                 * @todo Can we assume that pete will always be there?
-                 */
-                .given().auth().basic("pete", "pete")
-                .when().get("/dvn/api/data-deposit/v1.1/swordv2/service-document");
-    }
-
+   
 }

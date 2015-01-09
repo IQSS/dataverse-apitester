@@ -1,0 +1,182 @@
+{
+  "id": 24,
+  "identifier": "5GUURR5",
+  "persistentUrl": "http://dx.doi.org/10.5072/FK2/5GUURR5",
+  "protocol": "doi",
+  "authority": "10.5072/FK2",
+  "initialVersion": {
+    "id": 11,
+    "versionState": "DRAFT",
+    "distributionDate": "Distribution Date",
+    "productionDate": "Production Date",
+    "lastUpdateTime": "2014-12-16 02:23:46 -05",
+    "createTime": "2014-12-16 02:20:45 -05",
+    "metadataBlocks": {
+      "citation": {
+        "displayName": "Citation Metadata",
+        "fields": [
+          {
+            "typeName": "title",
+            "multiple": false,
+            "typeClass": "primitive",
+            "value": "time stamp title change ok changing again"
+          },
+          {
+            "typeName": "author",
+            "multiple": true,
+            "typeClass": "compound",
+            "value": [
+              {
+                "authorName": {
+                  "typeName": "authorName",
+                  "multiple": false,
+                  "typeClass": "primitive",
+                  "value": "Dataverse, Admin"
+                },
+                "authorAffiliation": {
+                  "typeName": "authorAffiliation",
+                  "multiple": false,
+                  "typeClass": "primitive",
+                  "value": "Dataverse"
+                }
+              }
+            ]
+          },
+          {
+            "typeName": "datasetContact",
+            "multiple": true,
+            "typeClass": "compound",
+            "value": [
+              {
+                "datasetContactName": {
+                  "typeName": "datasetContactName",
+                  "multiple": false,
+                  "typeClass": "primitive",
+                  "value": "Dataverse, Admin"
+                },
+                "datasetContactAffiliation": {
+                  "typeName": "datasetContactAffiliation",
+                  "multiple": false,
+                  "typeClass": "primitive",
+                  "value": "Dataverse"
+                },
+                "datasetContactEmail": {
+                  "typeName": "datasetContactEmail",
+                  "multiple": false,
+                  "typeClass": "primitive",
+                  "value": "admin@malinator.com"
+                }
+              }
+            ]
+          },
+          {
+            "typeName": "dsDescription",
+            "multiple": true,
+            "typeClass": "compound",
+            "value": [
+              {
+                "dsDescriptionValue": {
+                  "typeName": "dsDescriptionValue",
+                  "multiple": false,
+                  "typeClass": "primitive",
+                  "value": "desc"
+                }
+              }
+            ]
+          },
+          {
+            "typeName": "subject",
+            "multiple": true,
+            "typeClass": "controlledVocabulary",
+            "value": [
+              "Chemistry",
+              "Mathematical Sciences"
+            ]
+          },
+          {
+            "typeName": "depositor",
+            "multiple": false,
+            "typeClass": "primitive",
+            "value": "Admin Dataverse"
+          },
+          {
+            "typeName": "dateOfDeposit",
+            "multiple": false,
+            "typeClass": "primitive",
+            "value": "2014-12-16"
+          }
+        ]
+      },
+      "geospatial": {
+        "displayName": "Geospatial Metadata",
+        "fields": [
+          {
+            "typeName": "geographicCoverage",
+            "multiple": true,
+            "typeClass": "compound",
+            "value": [
+              {
+                "country": {
+                  "typeName": "country",
+                  "multiple": false,
+                  "typeClass": "controlledVocabulary",
+                  "value": "United States"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "socialscience": {
+        "displayName": "Social Science and Humanities Metadata",
+        "fields": [
+          {
+            "typeName": "universe",
+            "multiple": true,
+            "typeClass": "primitive",
+            "value": [
+              "Universe "
+            ]
+          }
+        ]
+      },
+      "astrophysics": {
+        "displayName": "Astronomy and Astrophysics Metadata",
+        "fields": [
+          {
+            "typeName": "astroType",
+            "multiple": true,
+            "typeClass": "controlledVocabulary",
+            "value": [
+              "Image"
+            ]
+          }
+        ]
+      },
+      "biomedical": {
+        "displayName": "Life Sciences Metadata",
+        "fields": [
+          {
+            "typeName": "studyDesignType",
+            "multiple": true,
+            "typeClass": "controlledVocabulary",
+            "value": [
+              "Case Control"
+            ]
+          }
+        ]
+      },
+      "journal": {
+        "displayName": "Journal Metadata",
+        "fields": [
+          {
+            "typeName": "articleType",
+            "multiple": false,
+            "typeClass": "controlledVocabulary",
+            "value": "abstract"
+          }
+        ]
+      }
+    }
+  }
+}
