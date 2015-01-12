@@ -31,7 +31,7 @@ import javax.json.*;
 public class BatchImportTest {
     private static String apiToken;
     private static String testUserName; 
-    private static String alias = "testBatch16";
+    private static String alias = "testBatch";
     private static File rootDir = new File("/Users/ellenk/src/dataverse-apitester");
     // Sometimes we want the imported data to stick around so we can look at it
     // in the UI.  To do this, set cleanup=false
