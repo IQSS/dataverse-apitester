@@ -13,7 +13,8 @@ import com.jayway.restassured.path.json.JsonPath;
 import com.jayway.restassured.response.Response;
 import java.io.File;
 import java.io.IOException;
-import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Scanner;
 import junit.framework.Assert;
 import org.junit.After;
@@ -29,8 +30,8 @@ import javax.json.*;
  */
 public class BatchImportTest {
     private static String apiToken;
-    private static Long testUserId; 
-    private static String alias = "testBatch";
+    private static String testUserName; 
+    private static String alias = "testBatch16";
     private static File rootDir = new File("/Users/ellenk/src/dataverse-apitester");
     // Sometimes we want the imported data to stick around so we can look at it
     // in the UI.  To do this, set cleanup=false
@@ -50,12 +51,24 @@ public class BatchImportTest {
         Assert.assertEquals(201, response.getStatusCode());
        
     }
-private static void deleteDataverse() {
-        Response response = given().when().delete("/api/dvs/"+alias+"?key="+apiToken);
-        System.out.println("response: "+response.asString());
+    private static void deleteDataverse() {
+        //  delete all contents of dataverse
+        Response response = given().when().get("/api/dvs/" + alias + "/contents?key=" + apiToken);
+        JsonPath jsonPath = new JsonPath(response.asString());
+        List<HashMap> datasets = jsonPath.getList("data");
+        for (HashMap dataset : datasets) {  
+            Integer id = (Integer) dataset.get("id");
+            response = given().param("key", apiToken).when().delete("/api/datasets/"+id+"/destroy");
+            Assert.assertEquals(200,response.getStatusCode());
+            System.out.println(response.asString());     
+        }
+        // Delete the dataverse
+        response = given().when().delete("/api/dvs/" + alias + "?key=" + apiToken);
+        System.out.println("response: " + response.asString());
         Assert.assertEquals(200, response.getStatusCode());
-       
+
     }
+    
     @BeforeClass
     public static void setUpClass() throws IOException{
        // Create a new user and get the API Key.   
@@ -68,11 +81,11 @@ private static void deleteDataverse() {
        
         JsonPath jsonPath = new JsonPath(response.asString());
        apiToken = jsonPath.get("data.apiToken");
+       testUserName = jsonPath.get("data.user.userName");
        Integer id = jsonPath.get("data.user.id");
-       testUserId = id.longValue();
        
        // make this user a superuser
-       response = given().get("/api/s/superuser/"+testUserId+"/");
+       response = given().get("/api/s/superuser/"+testUserName+"/");
        System.out.println("Toggle user response: "+response.asString());
        Assert.assertEquals(200,response.getStatusCode());
        
@@ -91,6 +104,29 @@ private static void deleteDataverse() {
     @Test
     public void testDemoDDI() {
         migrateSingleFile( "ds_5.xml");
+    }
+    
+    @Test
+    public void testMultipleVersions() {
+        String dirName = "version_test";
+         File path = new File(rootDir,"src/test/java/org/dataverse/apitester/data/ddi/"+dirName);
+       String parentDv = alias;
+       Response response = given().param("path", path.getAbsolutePath()).param("key", apiToken).when().get("/api/batch/migrate/"+parentDv);
+       System.out.println("response: "+response.asString());
+       Assert.assertEquals(200, response.getStatusCode());
+       
+       JsonPath jsonPath = new JsonPath(response.asString());
+       Integer createdId = jsonPath.get("data[0].id");
+       
+       // Now get the created dataset from the api 
+       response = given().param("key", apiToken).when().get("/api/datasets/"+createdId);
+       Assert.assertEquals(200,response.getStatusCode());
+       System.out.println(response.asString());
+       
+       
+    
+      
+    
     }
     
     @Test
@@ -127,7 +163,7 @@ private static void deleteDataverse() {
     public static void tearDownClass() {
         if (cleanup) {
             deleteDataverse();
-            Response response = given().delete("/api/s/authenticatedUsers/" + testUserId + "/");
+            Response response = given().delete("/api/s/authenticatedUsers/" + testUserName + "/");
             System.out.println("Delete user response: " + response.asString());
             Assert.assertEquals(200, response.getStatusCode());
         }
