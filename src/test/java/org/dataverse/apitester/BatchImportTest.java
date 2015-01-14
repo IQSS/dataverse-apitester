@@ -35,7 +35,7 @@ public class BatchImportTest {
     private static File rootDir = new File("/Users/ellenk/src/dataverse-apitester");
     // Sometimes we want the imported data to stick around so we can look at it
     // in the UI.  To do this, set cleanup=false
-    private static boolean cleanup = true;
+    private static boolean cleanup = false;
     public BatchImportTest() {
         RestAssured.baseURI = "http://localhost:8080";
     }
@@ -85,7 +85,7 @@ public class BatchImportTest {
        Integer id = jsonPath.get("data.user.id");
        
        // make this user a superuser
-       response = given().get("/api/s/superuser/"+testUserName+"/");
+       response = given().post("/api/s/superuser/"+testUserName+"/");
        System.out.println("Toggle user response: "+response.asString());
        Assert.assertEquals(200,response.getStatusCode());
        
