@@ -8,29 +8,23 @@ package org.dataverse.apitester;
 import com.jayway.restassured.RestAssured;
 import static com.jayway.restassured.RestAssured.expect;
 import static com.jayway.restassured.RestAssured.given;
-import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.path.json.JsonPath;
 import com.jayway.restassured.response.Response;
 import java.io.File;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Scanner;
 import junit.framework.Assert;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import javax.json.*;
 
 /**
  * Convenience class for removing test data that was created in BatchImportTest
  * (data can be left around in that test by setting cleanup=false)
+ * 
  * @author ellenk
  */
 public class CleanupTest {
-    private static String apiToken="fee3a52a-8c6f-4c4c-9d92-4cc25f4289bd";
+    // The apiToken is just a place holder - replace it with a current one
+    private static String apiToken="14ca8760-9bee-468d-8853-d746d1406f22";
     private static String testUserName= "TomTester"; 
     private static String alias = "testBatch";
     private static File rootDir = new File("/Users/ellenk/src/dataverse-apitester");
