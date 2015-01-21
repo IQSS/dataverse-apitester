@@ -1,16 +1,12 @@
 {
-  "id": 24,
-  "identifier": "5GUURR5",
-  "persistentUrl": "http://dx.doi.org/10.5072/FK2/5GUURR5",
-  "protocol": "doi",
-  "authority": "10.5072/FK2",
-  "initialVersion": {
+ 
+ 
+   "protocol": "doi",
+ 
+  "datasetVersion": {
     "id": 11,
     "versionState": "DRAFT",
-    "distributionDate": "Distribution Date",
-    "productionDate": "Production Date",
-    "lastUpdateTime": "2014-12-16 02:23:46 -05",
-    "createTime": "2014-12-16 02:20:45 -05",
+   
     "metadataBlocks": {
       "citation": {
         "displayName": "Citation Metadata",
