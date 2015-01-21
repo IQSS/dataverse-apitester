@@ -36,9 +36,7 @@ public class BatchImportTest {
     // Sometimes we want the imported data to stick around so we can look at it
     // in the UI.  To do this, set cleanup=false
     private static boolean cleanup = true;
-    public BatchImportTest() {
-        RestAssured.baseURI = "http://localhost:8080";
-    }
+   
     
     private static void createDataverse() {
        JsonArrayBuilder arrBuilder = Json.createArrayBuilder();
