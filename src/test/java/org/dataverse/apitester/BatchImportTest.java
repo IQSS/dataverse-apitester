@@ -103,11 +103,11 @@ public class BatchImportTest {
     
     @Test
     public void testDemoDDI() {
-        migrateSingleFile( "ds_5.xml");
+        processSingleFile( "ds_5.xml", "migrate");
     }
     
     @Test
-    public void testMultipleVersions() {
+    public void testMigrateMultipleVersions() {
         String dirName = "version_test";
          File path = new File(rootDir,"src/test/java/org/dataverse/apitester/data/ddi/"+dirName);
        String parentDv = alias;
@@ -131,14 +131,19 @@ public class BatchImportTest {
     
     @Test
     public void testSampleDDIFull() {
-        migrateSingleFile("samplestudyddifull.xml");
+        processSingleFile("samplestudyddifull.xml", "migrate");
     }
     
-    private   void migrateSingleFile(String fileName) {
+    @Test
+    public void testImportNewSampleDDIFull() {
+          processSingleFile("samplestudyddifull_noDOI.xml", "import");
+    }
+    
+    private   void processSingleFile(String fileName, String apiCommand) {
        
        File path = new File(rootDir,"src/test/java/org/dataverse/apitester/data/ddi/"+fileName);
        String parentDv = alias;
-       Response response = given().param("path", path.getAbsolutePath()).param("key", apiToken).when().get("/api/batch/migrate/"+parentDv);
+       Response response = given().param("path", path.getAbsolutePath()).param("key", apiToken).when().get("/api/batch/"+apiCommand+"/"+parentDv);
        System.out.println("response: "+response.asString());
        Assert.assertEquals(200, response.getStatusCode());
        
