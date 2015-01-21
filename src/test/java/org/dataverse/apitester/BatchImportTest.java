@@ -32,20 +32,18 @@ public class BatchImportTest {
     private static String apiToken;
     private static String testUserName; 
     private static String alias = "testBatch";
-    private static File rootDir = new File("/Users/ellenk/src/dataverse-apitester");
+    private static File rootDir = new File(System.getProperty("buildDirectory"));
     // Sometimes we want the imported data to stick around so we can look at it
     // in the UI.  To do this, set cleanup=false
-    private static boolean cleanup = false;
+    private static boolean cleanup = true;
     public BatchImportTest() {
         RestAssured.baseURI = "http://localhost:8080";
     }
     
     private static void createDataverse() {
-        JsonArrayBuilder arrBuilder = Json.createArrayBuilder();
+       JsonArrayBuilder arrBuilder = Json.createArrayBuilder();
         arrBuilder.add(Json.createObjectBuilder().add("contactEmail", "tom@mailinator.com"));
-        JsonObject dvData = Json.createObjectBuilder().add("alias", alias).add("name",alias).add("dataverseContacts", arrBuilder).build();
-       
-        
+        JsonObject dvData = Json.createObjectBuilder().add("alias", alias).add("name",alias).add("dataverseContacts", arrBuilder).build();       
         Response response = given().body(dvData.toString()).contentType(ContentType.JSON).when().post("/api/dvs/:root?key="+apiToken);
         System.out.println("response: "+response.asString());
         Assert.assertEquals(201, response.getStatusCode());
@@ -70,8 +68,8 @@ public class BatchImportTest {
     }
     
     @BeforeClass
-    public static void setUpClass() throws IOException{
-       // Create a new user and get the API Key.   
+    public static void setUpClass() throws IOException{     
+      // Create a new user and get the API Key.   
        File userJson = new File("src/test/java/org/dataverse/apitester/data/test-user.json"); 
        String jsonStr = new Scanner(userJson).useDelimiter("\\Z").next();
        Response response = given().body(jsonStr).contentType(ContentType.JSON).when().post("/api/users/tomtester/burrito");
