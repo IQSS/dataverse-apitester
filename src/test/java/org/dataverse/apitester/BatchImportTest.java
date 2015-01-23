@@ -5,7 +5,6 @@
  */
 package org.dataverse.apitester;
 
-import com.jayway.restassured.RestAssured;
 import static com.jayway.restassured.RestAssured.expect;
 import static com.jayway.restassured.RestAssured.given;
 import com.jayway.restassured.http.ContentType;
@@ -13,6 +12,8 @@ import com.jayway.restassured.path.json.JsonPath;
 import com.jayway.restassured.response.Response;
 import java.io.File;
 import java.io.IOException;
+import static java.nio.file.Files.readAllBytes;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
@@ -99,43 +100,70 @@ public class BatchImportTest {
     
     @Test
     public void testDemoDDI() {
-        processSingleFile( "ds_5.xml", "migrate");
+        migrateSingleFile( "ds_5.xml", "migrate");
+    }
+ 
+  //  This is commented out because the nightly build will make a call to a remote server,
+  //  which won't have access to the test data in the source tree.
+  //  Uncomment this to test locally.
+  //  @Test 
+    public void testMigrateMultipleVersions() {
+        String dirName = "version_test";
+        File path = new File(rootDir, "src/test/java/org/dataverse/apitester/data/ddi/" + dirName);
+        String parentDv = alias;
+        Response response = given().param("path", path.getAbsolutePath()).param("key", apiToken).when().get("/api/batch/migrate/" + parentDv);
+        System.out.println("response: " + response.asString());
+        Assert.assertEquals(200, response.getStatusCode());
+
+        JsonPath jsonPath = new JsonPath(response.asString());
+        Integer createdId = jsonPath.get("data[0].id");
+
+        // Now get the created dataset from the api 
+        response = given().param("key", apiToken).when().get("/api/datasets/" + createdId);
+        Assert.assertEquals(200, response.getStatusCode());
+        System.out.println(response.asString());
     }
     
     @Test
-    public void testMigrateMultipleVersions() {
-        String dirName = "version_test";
-         File path = new File(rootDir,"src/test/java/org/dataverse/apitester/data/ddi/"+dirName);
-       String parentDv = alias;
-       Response response = given().param("path", path.getAbsolutePath()).param("key", apiToken).when().get("/api/batch/migrate/"+parentDv);
-       System.out.println("response: "+response.asString());
-       Assert.assertEquals(200, response.getStatusCode());
+    public void testSampleDDIFull() throws IOException {
+        importSingleFile("samplestudyddifull.xml");
+    }
+    
+    @Test
+    public void testImportNewSampleDDIFull() throws IOException {
+        importSingleFile("samplestudyddifull_noDOI.xml");
        
-       JsonPath jsonPath = new JsonPath(response.asString());
-       Integer createdId = jsonPath.get("data[0].id");
+    }
+    
+    private void importSingleFile(String fileName) throws IOException {
+        
+        String parentDv = alias;
+        String xmlIn = new String(readAllBytes(Paths.get("src/test/java/org/dataverse/apitester/data/ddi/" + fileName)));
+        Response response = given()
+                .body(xmlIn)
+                .contentType("application/atom+xml")
+                .post("/api/batch/import/" + parentDv+"?key="+apiToken);
+        Assert.assertEquals(200, response.getStatusCode());
+        JsonPath jsonPath = new JsonPath(response.asString());
+        System.out.println(response.asString());
+        Integer createdId = jsonPath.get("data.id");
        
        // Now get the created dataset from the api 
        response = given().param("key", apiToken).when().get("/api/datasets/"+createdId);
        Assert.assertEquals(200,response.getStatusCode());
        System.out.println(response.asString());
        
-       
+       // Now delete the created set: 
+       if (cleanup) {
+           response = given().param("key", apiToken).when().delete("/api/datasets/"+createdId);
+            Assert.assertEquals(200,response.getStatusCode());
+            System.out.println(response.toString());
+       }
     
-      
-    
+        
     }
     
-    @Test
-    public void testSampleDDIFull() {
-        processSingleFile("samplestudyddifull.xml", "migrate");
-    }
-    
-    @Test
-    public void testImportNewSampleDDIFull() {
-          processSingleFile("samplestudyddifull_noDOI.xml", "import");
-    }
-    
-    private   void processSingleFile(String fileName, String apiCommand) {
+    private   void migrateSingleFile(String fileName, String apiCommand) {
        
        File path = new File(rootDir,"src/test/java/org/dataverse/apitester/data/ddi/"+fileName);
        String parentDv = alias;
