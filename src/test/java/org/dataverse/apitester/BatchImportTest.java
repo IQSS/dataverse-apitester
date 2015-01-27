@@ -100,23 +100,41 @@ public class BatchImportTest {
     
     @Test
     public void testDemoDDI() {
-        migrateSingleFile( "ds_5.xml", "migrate");
+        migrateSingleFile( "ds_5.xml");
     }
  
   //  This is commented out because the nightly build will make a call to a remote server,
   //  which won't have access to the test data in the source tree.
   //  Uncomment this to test locally.
-  //  @Test 
+    @Test 
     public void testMigrateMultipleVersions() {
-        String dirName = "version_test";
-        File path = new File(rootDir, "src/test/java/org/dataverse/apitester/data/ddi/" + dirName);
+        File path = new File(rootDir, "src/test/java/org/dataverse/apitester/data/ddi/parentDir2");
         String parentDv = alias;
-        Response response = given().param("path", path.getAbsolutePath()).param("key", apiToken).when().get("/api/batch/migrate/" + parentDv);
+        Response response = given().param("path", path.getAbsolutePath()).param("key", apiToken).param("dv", parentDv).when().get("/api/batch/migrate");
         System.out.println("response: " + response.asString());
         Assert.assertEquals(200, response.getStatusCode());
 
         JsonPath jsonPath = new JsonPath(response.asString());
         Integer createdId = jsonPath.get("data[0].id");
+
+        // Now get the created dataset from the api 
+        response = given().param("key", apiToken).when().get("/api/datasets/" + createdId);
+        Assert.assertEquals(200, response.getStatusCode());
+        System.out.println(response.asString());
+    }
+    /**
+     * This test migrates files that are organized within subdirectories
+     * that match the alias of the dataverse that the files are imported into.
+     */
+    @Test
+    public void testParentDirectory() {
+        File path = new File(rootDir, "src/test/java/org/dataverse/apitester/data/ddi/parentDir1");
+         Response response = given().param("path", path.getAbsolutePath()).param("key", apiToken).when().get("/api/batch/migrate");
+        System.out.println("response: " + response.asString());
+        Assert.assertEquals(200, response.getStatusCode());
+
+        JsonPath jsonPath = new JsonPath(response.asString());
+        Integer createdId = jsonPath.get("data[0][0].id");
 
         // Now get the created dataset from the api 
         response = given().param("key", apiToken).when().get("/api/datasets/" + createdId);
@@ -138,11 +156,11 @@ public class BatchImportTest {
     private void importSingleFile(String fileName) throws IOException {
         
         String parentDv = alias;
-        String xmlIn = new String(readAllBytes(Paths.get("src/test/java/org/dataverse/apitester/data/ddi/" + fileName)));
+        String xmlIn = new String(readAllBytes(Paths.get("src/test/java/org/dataverse/apitester/data/ddi/parentDir2/" + fileName)));
         Response response = given()
                 .body(xmlIn)
                 .contentType("application/atom+xml")
-                .post("/api/batch/import/" + parentDv+"?key="+apiToken);
+                .post("/api/batch/import/?dv=" + parentDv+"&key="+apiToken);
         Assert.assertEquals(200, response.getStatusCode());
         JsonPath jsonPath = new JsonPath(response.asString());
         System.out.println(response.asString());
@@ -163,11 +181,11 @@ public class BatchImportTest {
         
     }
     
-    private   void migrateSingleFile(String fileName, String apiCommand) {
-       
-       File path = new File(rootDir,"src/test/java/org/dataverse/apitester/data/ddi/"+fileName);
+    private   void migrateSingleFile(String fileName) {
+       String apiCommand="migrate";
+       File path = new File(rootDir,"src/test/java/org/dataverse/apitester/data/ddi/parentDir2/"+fileName);
        String parentDv = alias;
-       Response response = given().param("path", path.getAbsolutePath()).param("key", apiToken).when().get("/api/batch/"+apiCommand+"/"+parentDv);
+       Response response = given().param("path", path.getAbsolutePath()).param("key", apiToken).param("dv",parentDv).when().get("/api/batch/"+apiCommand);
        System.out.println("response: "+response.asString());
        Assert.assertEquals(200, response.getStatusCode());
        
