@@ -80,6 +80,8 @@ public class SwordTest {
                 .contentType("application/atom+xml")
                 .post("/dvn/api/data-deposit/v1.1/swordv2/collection/dataverse/" + dvAlias);
         String xml = createDatasetResponse.body().asString();
+//        System.out.println("xml: " + xml);
+        assertEquals(201, createDatasetResponse.getStatusCode());
         datasetSwordIdUrl = from(xml).get("entry.id");
         /**
          * @todo stop assuming the last 22 characters are the doi/globalId
