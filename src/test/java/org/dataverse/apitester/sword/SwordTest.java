@@ -67,10 +67,13 @@ public class SwordTest {
     @Test
     public void testSwordCreateDataset() throws IOException {
         // create dataverse
-        JsonArrayBuilder arrBuilder = Json.createArrayBuilder();
-        arrBuilder.add(Json.createObjectBuilder().add("contactEmail", "tom@mailinator.com"));
-        JsonObject dvData = Json.createObjectBuilder().add("alias", dvAlias).add("name", dvAlias).add("dataverseContacts", arrBuilder).build();
+        JsonArrayBuilder contactArrayBuilder = Json.createArrayBuilder();
+        contactArrayBuilder.add(Json.createObjectBuilder().add("contactEmail", "tom@mailinator.com"));
+        JsonArrayBuilder subjectArrayBuilder = Json.createArrayBuilder();
+        subjectArrayBuilder.add(Json.createObjectBuilder().add("controlledVocabularyValue", "Other"));
+        JsonObject dvData = Json.createObjectBuilder().add("alias", dvAlias).add("name", dvAlias).add("dataverseContacts", contactArrayBuilder).add("dataverseSubjects", subjectArrayBuilder).build();
         Response createDataverseResponse = given().body(dvData.toString()).contentType(ContentType.JSON).when().post("/api/dvs/:root?key=" + apiToken);
+        assertEquals(201, createDataverseResponse.getStatusCode());
         JsonPath jsonPath = JsonPath.from(createDataverseResponse.body().asString());
         File datasetXml = new File("src/test/java/org/dataverse/apitester/sword/data/dataset-trees1.xml");
         String xmlIn = Files.toString(datasetXml, StandardCharsets.UTF_8);
