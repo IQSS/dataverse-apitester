@@ -70,7 +70,7 @@ public class SwordTest {
         JsonArrayBuilder contactArrayBuilder = Json.createArrayBuilder();
         contactArrayBuilder.add(Json.createObjectBuilder().add("contactEmail", "tom@mailinator.com"));
         JsonArrayBuilder subjectArrayBuilder = Json.createArrayBuilder();
-        subjectArrayBuilder.add(Json.createObjectBuilder().add("controlledVocabularyValue", "Other"));
+        subjectArrayBuilder.add("Other");
         JsonObject dvData = Json.createObjectBuilder().add("alias", dvAlias).add("name", dvAlias).add("dataverseContacts", contactArrayBuilder).add("dataverseSubjects", subjectArrayBuilder).build();
         Response createDataverseResponse = given().body(dvData.toString()).contentType(ContentType.JSON).when().post("/api/dvs/:root?key=" + apiToken);
         assertEquals(201, createDataverseResponse.getStatusCode());
