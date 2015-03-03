@@ -72,7 +72,7 @@ public class SwordTest {
         JsonArrayBuilder subjectArrayBuilder = Json.createArrayBuilder();
         subjectArrayBuilder.add("Other");
         JsonObject dvData = Json.createObjectBuilder().add("alias", dvAlias).add("name", dvAlias).add("dataverseContacts", contactArrayBuilder).add("dataverseSubjects", subjectArrayBuilder).build();
-        Response createDataverseResponse = given().body(dvData.toString()).contentType(ContentType.JSON).when().post("/api/dvs/:root?key=" + apiToken);
+        Response createDataverseResponse = given().body(dvData.toString()).contentType(ContentType.JSON).when().post("/api/dataverses/:root?key=" + apiToken);
         assertEquals(201, createDataverseResponse.getStatusCode());
         JsonPath jsonPath = JsonPath.from(createDataverseResponse.body().asString());
         File datasetXml = new File("src/test/java/org/dataverse/apitester/sword/data/dataset-trees1.xml");
@@ -102,7 +102,7 @@ public class SwordTest {
         assertEquals(204, deleteDatasetResponse.getStatusCode());
 
         // delete dataverse
-        Response deleteDataverseResponse = given().when().delete("/api/dvs/" + dvAlias + "?key=" + apiToken);
+        Response deleteDataverseResponse = given().when().delete("/api/dataverses/" + dvAlias + "?key=" + apiToken);
         assertEquals(200, deleteDataverseResponse.getStatusCode());
 
         // delete user
