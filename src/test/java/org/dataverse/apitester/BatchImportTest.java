@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.IOException;
 import static java.nio.file.Files.readAllBytes;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
@@ -36,21 +37,23 @@ public class BatchImportTest {
     private static File rootDir = new File(System.getProperty("buildDirectory"));
     // Sometimes we want the imported data to stick around so we can look at it
     // in the UI.  To do this, set cleanup=false
-    private static boolean cleanup = true;
+    private static boolean cleanup = false;
    
     
     private static void createDataverse() {
-       JsonArrayBuilder arrBuilder = Json.createArrayBuilder();
+        JsonArrayBuilder arrBuilder = Json.createArrayBuilder();
+        JsonArrayBuilder arrBuilder2 = Json.createArrayBuilder();
         arrBuilder.add(Json.createObjectBuilder().add("contactEmail", "tom@mailinator.com"));
-        JsonObject dvData = Json.createObjectBuilder().add("alias", alias).add("name",alias).add("dataverseContacts", arrBuilder).build();       
-        Response response = given().body(dvData.toString()).contentType(ContentType.JSON).when().post("/api/dvs/:root?key="+apiToken);
+        arrBuilder2.add( "Other");
+        JsonObject dvData = Json.createObjectBuilder().add("dataverseSubjects",arrBuilder2).add("alias", alias).add("name",alias).add("dataverseContacts", arrBuilder).build();       
+        Response response = given().body(dvData.toString()).contentType(ContentType.JSON).when().post("/api/dataverses/:root?key="+apiToken);
         System.out.println("response: "+response.asString());
         Assert.assertEquals(201, response.getStatusCode());
        
     }
     private static void deleteDataverse() {
         //  delete all contents of dataverse
-        Response response = given().when().get("/api/dvs/" + alias + "/contents?key=" + apiToken);
+        Response response = given().when().get("/api/dataverses/" + alias + "/contents?key=" + apiToken);
         JsonPath jsonPath = new JsonPath(response.asString());
         List<HashMap> datasets = jsonPath.getList("data");
         for (HashMap dataset : datasets) {  
@@ -60,7 +63,7 @@ public class BatchImportTest {
             System.out.println(response.asString());     
         }
         // Delete the dataverse
-        response = given().when().delete("/api/dvs/" + alias + "?key=" + apiToken);
+        response = given().when().delete("/api/dataverses/" + alias + "?key=" + apiToken);
         System.out.println("response: " + response.asString());
         Assert.assertEquals(200, response.getStatusCode());
 
@@ -99,10 +102,19 @@ public class BatchImportTest {
    // To delete a dataset: curl -X DELETE "http://localhost:8080/api/datasets/57?key=d76c2f42-e674-4350-87c7-159a331d1136"
     
     @Test
-    public void testDemoDDI() {
+    public void testDemoDDI() throws IOException {
         migrateSingleFile( "ds_5.xml");
     }
- 
+    
+    @Test
+    public void testCustomFields() throws IOException {
+        migrateSingleFile("ddi_custom_fields.xml");
+    }
+    
+   @Test
+    public void testParseDoi() {
+        migrateSingleFile( "ds_5_doi.xml");
+    }
   //  This is commented out because the nightly build will make a call to a remote server,
   //  which won't have access to the test data in the source tree.
   //  Uncomment this to test locally.
@@ -114,13 +126,7 @@ public class BatchImportTest {
         System.out.println("response: " + response.asString());
         Assert.assertEquals(200, response.getStatusCode());
 
-        JsonPath jsonPath = new JsonPath(response.asString());
-        Integer createdId = jsonPath.get("data[0].id");
-
-        // Now get the created dataset from the api 
-        response = given().param("key", apiToken).when().get("/api/datasets/" + createdId);
-        Assert.assertEquals(200, response.getStatusCode());
-        System.out.println(response.asString());
+       
     }
     /**
      * This test migrates files that are organized within subdirectories
@@ -131,15 +137,25 @@ public class BatchImportTest {
         File path = new File(rootDir, "src/test/java/org/dataverse/apitester/data/ddi/parentDir1");
          Response response = given().param("path", path.getAbsolutePath()).param("key", apiToken).when().get("/api/batch/migrate");
         System.out.println("response: " + response.asString());
-        Assert.assertEquals(200, response.getStatusCode());
+        Assert.assertEquals(202, response.getStatusCode());
 
         JsonPath jsonPath = new JsonPath(response.asString());
-        Integer createdId = jsonPath.get("data[0][0].id");
+      //  Integer createdId = jsonPath.get("data[0][0].id");
 
-        // Now get the created dataset from the api 
-        response = given().param("key", apiToken).when().get("/api/datasets/" + createdId);
-        Assert.assertEquals(200, response.getStatusCode());
-        System.out.println(response.asString());
+        
+    }
+    
+    @Test
+    public void testZimbabwe() {
+        File path = new File(rootDir, "src/test/java/org/dataverse/apitester/data/ddi/parentDir3");
+         Response response = given().param("path", path.getAbsolutePath()).param("key", apiToken).when().get("/api/batch/import");
+        System.out.println("response: " + response.asString());
+        Assert.assertEquals(202, response.getStatusCode());
+        // We know that this file contains invalid data, so check that it returns a validation message, rather than a created id
+        JsonPath jsonPath = new JsonPath(response.asString());
+    //       ArrayList dataList = (ArrayList)jsonPath.get("data[0]");
+  //  Assert.assertEquals(35, dataList.size());
+        
     }
     
     @Test
@@ -153,6 +169,11 @@ public class BatchImportTest {
        
     }
     
+    @Test 
+    public void testKeywordSubject() throws IOException {
+        migrateSingleFile("keywordtest.xml");
+    }
+    
     private void importSingleFile(String fileName) throws IOException {
         
         String parentDv = alias;
@@ -161,9 +182,9 @@ public class BatchImportTest {
                 .body(xmlIn)
                 .contentType("application/atom+xml")
                 .post("/api/batch/import/?dv=" + parentDv+"&key="+apiToken);
+        System.out.println(response.asString());
         Assert.assertEquals(200, response.getStatusCode());
         JsonPath jsonPath = new JsonPath(response.asString());
-        System.out.println(response.asString());
         Integer createdId = jsonPath.get("data.id");
        
        // Now get the created dataset from the api 
@@ -187,22 +208,8 @@ public class BatchImportTest {
        String parentDv = alias;
        Response response = given().param("path", path.getAbsolutePath()).param("key", apiToken).param("dv",parentDv).when().get("/api/batch/"+apiCommand);
        System.out.println("response: "+response.asString());
-       Assert.assertEquals(200, response.getStatusCode());
-       
-       JsonPath jsonPath = new JsonPath(response.asString());
-       Integer createdId = jsonPath.get("data[0].id");
-       
-       // Now get the created dataset from the api 
-       response = given().param("key", apiToken).when().get("/api/datasets/"+createdId);
-       Assert.assertEquals(200,response.getStatusCode());
-       System.out.println(response.asString());
-       
-       // Now delete the created set: 
-       if (cleanup) {
-           response = given().param("key", apiToken).when().delete("/api/datasets/"+createdId);
-            Assert.assertEquals(200,response.getStatusCode());
-            System.out.println(response.toString());
-       }
+       Assert.assertEquals(202, response.getStatusCode());
+      
       
     }
 
