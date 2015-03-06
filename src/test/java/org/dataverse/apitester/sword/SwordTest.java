@@ -95,11 +95,6 @@ public class SwordTest {
         globalId = datasetSwordIdUrl.substring(datasetSwordIdUrl.length() - 22);
     }
 
-    /**
-     * @todo Enable this test (and cleanup) after
-     * https://github.com/IQSS/dataverse/issues/1554 is fixed
-     */
-    @Ignore
     @Test
     public void testSwordEditDataset() throws IOException {
         // create dataverse
