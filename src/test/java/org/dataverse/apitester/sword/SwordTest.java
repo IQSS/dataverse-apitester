@@ -147,12 +147,12 @@ public class SwordTest {
                 .delete("/dvn/api/data-deposit/v1.1/swordv2/edit/study/" + globalId);
 //        System.out.println("expected 204, got " + deleteDatasetResponse.getStatusCode());
 
-//        deleteDataset2();
+        deleteDataset2();
         // delete dataverse
         Response deleteDataverseResponse = given().when().delete("/api/dataverses/" + dvAlias + "?key=" + apiToken);
 //        System.out.println("expected 204, got " + deleteDataverseResponse.getStatusCode());
 
-//        deleteDataverse2();
+        deleteDataverse2();
         // delete user
         Response deleteUserResponse = given().delete("/api/s/authenticatedUsers/" + username + "/");
 //        System.out.println("expected 200, got " + deleteUserResponse.getStatusCode());
