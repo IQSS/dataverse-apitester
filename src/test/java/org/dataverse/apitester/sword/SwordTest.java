@@ -61,10 +61,7 @@ public class SwordTest {
         Response response = given()
                 .auth().basic(username, password)
                 .when().get("/dvn/api/data-deposit/v1.1/swordv2/service-document");
-        assertEquals(response.getStatusCode(), 200);
-        String xml = response.body().asString();
-        String swordSpecVersion = from(xml).get("service.version");
-        assertEquals(swordSpecVersion, "2.0");
+        assertEquals(response.getStatusCode(), 403);
     }
 
     @Test
