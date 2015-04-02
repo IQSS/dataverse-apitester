@@ -142,23 +142,23 @@ public class SwordTest {
                 .auth().basic(apiToken, EMPTY_STRING)
                 .relaxedHTTPSValidation()
                 .delete("/dvn/api/data-deposit/v1.1/swordv2/edit/study/" + globalId);
-//        System.out.println("expected 204, got " + deleteDatasetResponse.getStatusCode());
+        assertEquals(204, deleteDatasetResponse.getStatusCode());
 
         deleteDataset2();
         // delete dataverse
         Response deleteDataverseResponse = given().when().delete("/api/dataverses/" + dvAlias + "?key=" + apiToken);
-//        System.out.println("expected 204, got " + deleteDataverseResponse.getStatusCode());
+        assertEquals(200, deleteDataverseResponse.getStatusCode());
 
         deleteDataverse2();
         // delete user
-        Response deleteUserResponse = given().delete("/api/s/authenticatedUsers/" + username + "/");
-//        System.out.println("expected 200, got " + deleteUserResponse.getStatusCode());
+        Response deleteUserResponse = given().delete("/api/admin/authenticatedUsers/" + username + "/");
+        assertEquals(200, deleteUserResponse.getStatusCode());
     }
 
     private static void deleteDataverse2() {
         // delete dataverse 2
         Response deleteDataverse2Response = given().when().delete("/api/dataverses/" + dvAlias2 + "?key=" + apiToken);
-        System.out.println("expected 204, got " + deleteDataverse2Response.getStatusCode());
+        assertEquals(200, deleteDataverse2Response.getStatusCode());
     }
 
     private static void deleteDataset2() {
@@ -167,6 +167,6 @@ public class SwordTest {
                 .auth().basic(apiToken, EMPTY_STRING)
                 .relaxedHTTPSValidation()
                 .delete("/dvn/api/data-deposit/v1.1/swordv2/edit/study/" + globalId2);
-        System.out.println("expected 204, got " + deleteDataset2Response.getStatusCode());
+        assertEquals(204, deleteDataset2Response.getStatusCode());
     }
 }
