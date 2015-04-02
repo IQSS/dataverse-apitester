@@ -39,7 +39,7 @@ public class SwordTest {
     public static void createUser() throws IOException {
         File userJson = new File("src/test/java/org/dataverse/apitester/sword/data/sworduser.json");
         String jsonStr = new Scanner(userJson).useDelimiter("\\Z").next();
-        Response response = given().body(jsonStr).contentType(ContentType.JSON).when().post("/api/users?key=burrito&password=" + password);
+        Response response = given().body(jsonStr).contentType(ContentType.JSON).when().post("/api/builtin-users?key=burrito&password=" + password);
         Assert.assertEquals(200, response.getStatusCode());
         JsonPath jsonPath = JsonPath.from(response.body().asString());
         username = jsonPath.get("data.user.userName");
