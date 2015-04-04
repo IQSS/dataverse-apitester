@@ -50,11 +50,11 @@ public class MainTest {
     @Test
     public void testSearchWithNoQueryParameter() {
         Response response = get("/api/search");
-        assertEquals(400, response.getStatusCode());
+        assertEquals(401, response.getStatusCode());
         String json = response.asString();
         JsonPath jsonPath = new JsonPath(json);
         assertEquals(jsonPath.get("status"), "ERROR");
-        assertEquals(jsonPath.get("message"), "q parameter is missing");
+        assertEquals(jsonPath.get("message"), "Please provide a key query parameter (?key=XXX)");
     }
 
 }
