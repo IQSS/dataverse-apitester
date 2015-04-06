@@ -19,7 +19,6 @@ import static junit.framework.Assert.assertEquals;
 import static org.hamcrest.CoreMatchers.equalTo;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class SwordTest {
@@ -28,10 +27,10 @@ public class SwordTest {
     static String apiToken;
     static String password = "foo";
     static String EMPTY_STRING = "";
-    private static String globalId;
+    private static String globalId1;
     private static String globalId2;
     final String expectedSwordSpecVersion = "2.0";
-    static String dvAlias = "swordtestdv";
+    static String dvAlias1 = "swordtestdv1";
     static String dvAlias2 = "swordtestdv2";
     static String datasetSwordIdUrl;
 
@@ -71,7 +70,7 @@ public class SwordTest {
         contactArrayBuilder.add(Json.createObjectBuilder().add("contactEmail", "tom@mailinator.com"));
         JsonArrayBuilder subjectArrayBuilder = Json.createArrayBuilder();
         subjectArrayBuilder.add("Other");
-        JsonObject dvData = Json.createObjectBuilder().add("alias", dvAlias).add("name", dvAlias).add("dataverseContacts", contactArrayBuilder).add("dataverseSubjects", subjectArrayBuilder).build();
+        JsonObject dvData = Json.createObjectBuilder().add("alias", dvAlias1).add("name", dvAlias1).add("dataverseContacts", contactArrayBuilder).add("dataverseSubjects", subjectArrayBuilder).build();
         Response createDataverseResponse = given().body(dvData.toString()).contentType(ContentType.JSON).when().post("/api/dataverses/:root?key=" + apiToken);
         assertEquals(201, createDataverseResponse.getStatusCode());
         JsonPath jsonPath = JsonPath.from(createDataverseResponse.body().asString());
@@ -81,7 +80,7 @@ public class SwordTest {
                 .auth().basic(apiToken, EMPTY_STRING)
                 .body(xmlIn)
                 .contentType("application/atom+xml")
-                .post("/dvn/api/data-deposit/v1.1/swordv2/collection/dataverse/" + dvAlias);
+                .post("/dvn/api/data-deposit/v1.1/swordv2/collection/dataverse/" + dvAlias1);
         String xml = createDatasetResponse.body().asString();
 //        System.out.println("xml: " + xml);
         assertEquals(201, createDatasetResponse.getStatusCode());
@@ -89,7 +88,7 @@ public class SwordTest {
         /**
          * @todo stop assuming the last 22 characters are the doi/globalId
          */
-        globalId = datasetSwordIdUrl.substring(datasetSwordIdUrl.length() - 22);
+        globalId1 = datasetSwordIdUrl.substring(datasetSwordIdUrl.length() - 22);
     }
 
     @Test
@@ -133,40 +132,34 @@ public class SwordTest {
 
     @AfterClass
     public static void cleanUp() {
+
         boolean cleanup = true;
         if (!cleanup) {
             return;
         }
-        // delete dataset
-        Response deleteDatasetResponse = given()
-                .auth().basic(apiToken, EMPTY_STRING)
-                .relaxedHTTPSValidation()
-                .delete("/dvn/api/data-deposit/v1.1/swordv2/edit/study/" + globalId);
-        assertEquals(204, deleteDatasetResponse.getStatusCode());
 
-        deleteDataset2();
-        // delete dataverse
-        Response deleteDataverseResponse = given().when().delete("/api/dataverses/" + dvAlias + "?key=" + apiToken);
-        assertEquals(200, deleteDataverseResponse.getStatusCode());
+        Response deleteDataset1Response = deleteDataset(globalId1);
+        assertEquals(204, deleteDataset1Response.getStatusCode());
+        Response deleteDataverse1Response = deleteDataverse(dvAlias1);
+        assertEquals(200, deleteDataverse1Response.getStatusCode());
 
-        deleteDataverse2();
-        // delete user
+        Response deleteDataset2Response = deleteDataset(globalId2);
+        assertEquals(204, deleteDataset2Response.getStatusCode());
+        Response deleteDataverse2Response = deleteDataverse(dvAlias2);
+        assertEquals(200, deleteDataverse2Response.getStatusCode());
+
         Response deleteUserResponse = given().delete("/api/admin/authenticatedUsers/" + username + "/");
         assertEquals(200, deleteUserResponse.getStatusCode());
     }
 
-    private static void deleteDataverse2() {
-        // delete dataverse 2
-        Response deleteDataverse2Response = given().when().delete("/api/dataverses/" + dvAlias2 + "?key=" + apiToken);
-        assertEquals(200, deleteDataverse2Response.getStatusCode());
-    }
-
-    private static void deleteDataset2() {
-        // delete dataset 2
-        Response deleteDataset2Response = given()
+    private static Response deleteDataset(String globalId) {
+        return given()
                 .auth().basic(apiToken, EMPTY_STRING)
                 .relaxedHTTPSValidation()
-                .delete("/dvn/api/data-deposit/v1.1/swordv2/edit/study/" + globalId2);
-        assertEquals(204, deleteDataset2Response.getStatusCode());
+                .delete("/dvn/api/data-deposit/v1.1/swordv2/edit/study/" + globalId);
+    }
+
+    private static Response deleteDataverse(String dvAlias) {
+        return given().when().delete("/api/dataverses/" + dvAlias + "?key=" + apiToken);
     }
 }
