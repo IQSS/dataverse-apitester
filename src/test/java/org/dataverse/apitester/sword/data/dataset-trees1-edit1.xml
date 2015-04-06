@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <entry xmlns="http://www.w3.org/2005/Atom" xmlns:dcterms="http://purl.org/dc/terms/">
-   <dcterms:title>Spruce Goose</dcterms:title>
-   <dcterms:creator>Spruce, Sabrina</dcterms:creator>
+   <dcterms:title>Sabers in the Sierras Strike Again</dcterms:title>
+   <dcterms:creator>Saber, Sierra</dcterms:creator>
    <dcterms:creator>Chestnut, Caleb</dcterms:creator>
-   <dcterms:description>What the Spruce Goose was really made of.</dcterms:description>
+   <dcterms:description>Sabber rattling.</dcterms:description>
    <!-- for backwards compatibility, let dcterms:rights be blank: https://github.com/IQSS/dataverse/issues/805#issuecomment-71670396 -->
    <dcterms:rights></dcterms:rights>
    <dcterms:subject>Other</dcterms:subject>
