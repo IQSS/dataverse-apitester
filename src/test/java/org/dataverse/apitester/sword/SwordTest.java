@@ -147,6 +147,73 @@ public class SwordTest {
     }
 
     /**
+     * For https://github.com/IQSS/dataverse/issues/2222 but disabled for now
+     * because this test requires a way to discover the dataset id based on a
+     * DOI. See also https://github.com/IQSS/dataverse/issues/1837
+     */
+    @Ignore
+    @Test
+    public void testSwordDeleteFiles2222() throws IOException {
+        // create dataverse
+        JsonArrayBuilder contactArrayBuilder = Json.createArrayBuilder();
+        contactArrayBuilder.add(Json.createObjectBuilder().add("contactEmail", "tom@mailinator.com"));
+        JsonArrayBuilder subjectArrayBuilder = Json.createArrayBuilder();
+        subjectArrayBuilder.add("Other");
+        JsonObject dvData = Json.createObjectBuilder().add("alias", dvAlias3).add("name", dvAlias3).add("dataverseContacts", contactArrayBuilder).add("dataverseSubjects", subjectArrayBuilder).build();
+
+        Response createDataverseResponse = given().body(dvData.toString()).contentType(ContentType.JSON).when().post("/api/dataverses/:root?key=" + apiToken);
+        assertEquals(201, createDataverseResponse.getStatusCode());
+        JsonPath jsonPath = JsonPath.from(createDataverseResponse.body().asString());
+        File datasetXml = new File("src/test/java/org/dataverse/apitester/sword/data/dataset-trees1.xml");
+        String xmlIn = Files.toString(datasetXml, StandardCharsets.UTF_8);
+
+        Response createDatasetResponse = given()
+                .auth().basic(apiToken, EMPTY_STRING)
+                .body(xmlIn)
+                .contentType("application/atom+xml")
+                .post("/dvn/api/data-deposit/v1.1/swordv2/collection/dataverse/" + dvAlias3);
+        String xmlFromCreate = createDatasetResponse.body().asString();
+        assertEquals(201, createDatasetResponse.getStatusCode());
+        System.out.println("BEGIN CREATE");
+        from(xmlFromCreate).prettyPrint();
+        System.out.println("END CREATE");
+        datasetSwordIdUrl = from(xmlFromCreate).get("entry.id");
+        String datasetEntityId = from(xmlFromCreate).get("entry.datasetEntityId").toString();
+
+        /**
+         * @todo stop assuming the last 22 characters are the doi/globalId
+         */
+        globalId3 = datasetSwordIdUrl.substring(datasetSwordIdUrl.length() - 22);
+
+        Process uploadZipFileProcess = uploadZipFile(globalId3, "file1.zip");
+        printCommandOutput(uploadZipFileProcess);
+
+        Response dataset3Statement = getSwordStatement();
+        dataset3Statement.body().prettyPrint();
+
+        String xml = dataset3Statement.body().asString();
+        // http://www.jayway.com/2013/04/12/whats-new-in-rest-assured-1-8/
+        XmlPath xmlPath = new XmlPath(xml);
+        String fileUrl = xmlPath.get("feed.entry[0].id").toString();
+        String[] parts = fileUrl.split("/");
+        String fileId = parts[10];
+
+        Response listFilesFromDraftBeforeDelete = listFilesFromVersionUsingEntityId(datasetEntityId, ":draft");
+        listFilesFromDraftBeforeDelete.prettyPrint();
+
+        System.out.println("file1.txt is deleted through SWORD.");
+        Response deleteFileResponse = deleteFile(Integer.parseInt(fileId));
+        deleteFileResponse.body().prettyPrint();
+
+        Response listFilesFromDraftAfterDelete = listFilesFromVersionUsingEntityId(datasetEntityId, ":draft");
+        listFilesFromDraftAfterDelete.prettyPrint();
+
+        Response tryToDeleteInvalidFileIdResponse = deleteFile(Integer.MAX_VALUE);
+        System.out.println("code: " + tryToDeleteInvalidFileIdResponse.getStatusCode());
+        assertEquals(400, tryToDeleteInvalidFileIdResponse.getStatusCode());
+    }
+
+    /**
      * @todo Finish reproducing this bug (and fix it!): Unintuitive behaviors
      * when deleting files via SWORD API -
      * https://github.com/IQSS/dataverse/issues/1784
@@ -357,10 +424,11 @@ public class SwordTest {
         Response deleteDataverse2Response = deleteDataverse(dvAlias2);
         assertEquals(200, deleteDataverse2Response.getStatusCode());
 
-//        Response destroyDataset3Response = destroyDataset(globalId3);
+//        Response deleteDataset3Response = deleteDataset(globalId3);
+//        assertEquals(204, deleteDataset3Response.getStatusCode());
 //        Response deleteDataverse3Response = deleteDataverse(dvAlias3);
 //        assertEquals(200, deleteDataverse3Response.getStatusCode());
-
+        // expect an exception if we don't remove all of the user's stuff first
         Response deleteUserResponse = given().delete("/api/admin/authenticatedUsers/" + username + "/");
         assertEquals(200, deleteUserResponse.getStatusCode());
     }
@@ -411,6 +479,13 @@ public class SwordTest {
                 .param("key", apiToken)
                 .when()
                 .get("/api/datasets/" + id + "/versions/" + version + "/files");
+    }
+
+    private static Response listFilesFromVersionUsingEntityId(String entityId, String version) {
+        return given()
+                .param("key", apiToken)
+                .when()
+                .get("/api/datasets/" + entityId + "/versions/" + version + "/files");
     }
 
     private static Response makeSuperuser(String userToMakeSuperuser) {
